@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<odb name="tutorial1.neodatis" export-date-time="1391357076243" max-oid="31" file-format-version="9">
+  <meta-model >
+    <class id="1" name="org.neodatis.odb.tutorial.Sport">
+      <attribute id="1" name="name" type="java.lang.String"/>
+    </class>
+    <class id="3" name="org.neodatis.odb.tutorial.Team">
+      <attribute id="1" name="name" type="java.lang.String"/>
+      <attribute id="2" name="players" type="java.util.Collection"/>
+    </class>
+    <class id="4" name="org.neodatis.odb.tutorial.Game">
+      <attribute id="1" name="when" type="java.util.Date"/>
+      <attribute id="2" name="sport" type="org.neodatis.odb.tutorial.Sport"/>
+      <attribute id="3" name="team1" type="org.neodatis.odb.tutorial.Team"/>
+      <attribute id="4" name="team2" type="org.neodatis.odb.tutorial.Team"/>
+      <attribute id="5" name="result" type="java.lang.String"/>
+    </class>
+    <class id="5" name="org.neodatis.odb.tutorial.Player">
+      <attribute id="1" name="name" type="java.lang.String"/>
+      <attribute id="2" name="birthDate" type="java.util.Date"/>
+      <attribute id="3" name="favoriteSport" type="org.neodatis.odb.tutorial.Sport"/>
+    </class>
+    <class id="17" name="org.neodatis.odb.impl.core.btree.ODBBTreeNodeSingle">
+      <attribute id="1" name="oid" type="org.neodatis.odb.OID"/>
+      <attribute id="2" name="childrenOids" type="array" array-of="org.neodatis.odb.OID"/>
+      <attribute id="3" name="parentOid" type="org.neodatis.odb.OID"/>
+      <attribute id="4" name="degree" type="int"/>
+      <attribute id="5" name="keys" type="array" array-of="java.lang.Comparable"/>
+      <attribute id="6" name="values" type="array" array-of="java.lang.Object"/>
+      <attribute id="7" name="nbKeys" type="int"/>
+      <attribute id="8" name="nbChildren" type="int"/>
+      <attribute id="9" name="maxNbKeys" type="int"/>
+      <attribute id="10" name="maxNbChildren" type="int"/>
+    </class>
+    <class id="18" name="java.lang.Comparable">
+    </class>
+    <class id="19" name="java.lang.Object">
+    </class>
+    <class id="21" name="org.neodatis.odb.impl.core.btree.ODBBTreeSingle">
+      <attribute id="1" name="oid" type="org.neodatis.odb.OID"/>
+      <attribute id="2" name="name" type="java.lang.String"/>
+      <attribute id="3" name="degree" type="int"/>
+      <attribute id="4" name="size" type="long"/>
+      <attribute id="5" name="height" type="int"/>
+      <attribute id="6" name="root" type="org.neodatis.btree.IBTreeNode"/>
+      <attribute id="7" name="controlNumber" type="int"/>
+    </class>
+    <class id="22" name="org.neodatis.btree.IBTreeNode">
+    </class>
+    <class id="23" name="org.neodatis.btree.IBTree">
+    </class>
+    <class id="24" name="org.neodatis.odb.core.layers.layer2.meta.ClassInfoIndex">
+      <attribute id="1" name="classInfoId" type="org.neodatis.odb.OID"/>
+      <attribute id="2" name="name" type="java.lang.String"/>
+      <attribute id="3" name="status" type="byte"/>
+      <attribute id="4" name="isUnique" type="boolean"/>
+      <attribute id="5" name="creationDate" type="long"/>
+      <attribute id="6" name="lastRebuild" type="long"/>
+      <attribute id="7" name="attributeIds" type="array" array-of="int"/>
+      <attribute id="8" name="btree" type="org.neodatis.btree.IBTree"/>
+    </class>
+    <class id="26" name="org.neodatis.odb.core.query.SimpleCompareKey">
+      <attribute id="1" name="key" type="java.lang.Comparable"/>
+    </class>
+  </meta-model>
+  <objects >
+    <object oid="8" class-id="3">
+      <attribute id="1" name="name" value="Paris"/>
+      <attribute id="2" name="players" type="collection">
+        <collection native-class-name="java.util.ArrayList" size="2">
+          <element ref-oid="9"/>
+          <element ref-oid="10"/>
+        </collection>
+      </attribute>
+    </object>
+    <object oid="11" class-id="3">
+      <attribute id="1" name="name" value="Montpellier"/>
+      <attribute id="2" name="players" type="collection">
+        <collection native-class-name="java.util.ArrayList" size="2">
+          <element ref-oid="12"/>
+          <element ref-oid="13"/>
+        </collection>
+      </attribute>
+    </object>
+    <object oid="9" class-id="5">
+      <attribute id="1" name="name" value="olivier"/>
+      <attribute id="2" name="birthDate" value="1391357074703"/>
+      <attribute id="3" name="favoriteSport" ref-oid="7"/>
+    </object>
+    <object oid="10" class-id="5">
+      <attribute id="1" name="name" value="pierre"/>
+      <attribute id="2" name="birthDate" value="1391357074703"/>
+      <attribute id="3" name="favoriteSport" ref-oid="7"/>
+    </object>
+    <object oid="12" class-id="5">
+      <attribute id="1" name="name" value="elohim"/>
+      <attribute id="2" name="birthDate" value="1391357074703"/>
+      <attribute id="3" name="favoriteSport" ref-oid="7"/>
+    </object>
+    <object oid="13" class-id="5">
+      <attribute id="1" name="name" value="minh"/>
+      <attribute id="2" name="birthDate" value="1391357074703"/>
+      <attribute id="3" name="favoriteSport" ref-oid="7"/>
+    </object>
+    <object oid="7" class-id="1">
+      <attribute id="1" name="name" value="Beach-Volley"/>
+    </object>
+    <object oid="15" class-id="1">
+      <attribute id="1" name="name" value="Tennis"/>
+    </object>
+    <object oid="6" class-id="4">
+      <attribute id="1" name="when" value="1391357074704"/>
+      <attribute id="2" name="sport" ref-oid="7"/>
+      <attribute id="3" name="team1" ref-oid="8"/>
+      <attribute id="4" name="team2" ref-oid="11"/>
+      <attribute id="5" name="result" is-null="true"/>
+    </object>
+  </objects>
+</odb>
