@@ -96,6 +96,42 @@ public class MyTest {
 		lngEnd = System.currentTimeMillis();
 		
 		System.out.println( "Read elapsed time: " + Long.toString( lngEnd - lngStart ) + " ms" );
+
+		lngStart = System.currentTimeMillis();
+		
+		Objects<?> objects = null;
+		
+		try {
+
+			odb = ODBFactory.open( ODB_NAME );
+
+			objects = odb.getObjects( CStoreData.class );
+
+			while ( objects.hasNext() ) {
+
+				odb.delete( objects.next() );
+			
+			}
+			
+		}
+		finally {
+
+			if (odb != null) {
+				// Close the database
+				odb.close();
+			}
+
+		}
+
+		for ( CStoreData SD : ListObject ) {
+			
+			System.out.println( SD.strRecordID );
+			
+		}
+		
+		lngEnd = System.currentTimeMillis();
+		
+		System.out.println( "Delete elapsed time: " + Long.toString( lngEnd - lngStart ) + " ms" );
 		
 	}
 
